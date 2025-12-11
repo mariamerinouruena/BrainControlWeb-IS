@@ -1,0 +1,24 @@
+### 1. POST: Crear EventoAccion
+# URL: POST http://localhost:8080/api/eventos-accion
+# Se prueba la inserción de datos en la base de datos (Entidad, Servicio y Repositorio)
+POST http://localhost:8080/api/eventos-accion
+Content-Type: application/json
+
+{
+    "idEvento": "PRUEBA-001",
+    "tipo": "AccionClick",
+    "date": "2025-12-11T20:38:00",
+    "posicion": "10.0, 5.0",
+    "resultado": "OK",
+    "tiempoReaccion": 150
+}
+
+### 2. GET: Recuperar Evento por ID
+# URL: GET http://localhost:8080/api/eventos-accion/PRUEBA-001
+# Se prueba la obtención de un registro específico
+GET http://localhost:8080/api/eventos-accion/PRUEBA-001
+
+### 3. GET: Recuperar Todos los Eventos
+# URL: GET http://localhost:8080/api/eventos-accion
+# Se prueba la obtención de todos los registros (debe incluir PRUEBA-001)
+GET http://localhost:8080/api/eventos-accion
