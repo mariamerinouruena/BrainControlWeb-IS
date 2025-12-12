@@ -41,4 +41,10 @@ public class EventoAccionController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @DeleteMapping("/{idEvento}")
+    public ResponseEntity<Void> deleteEventoAccion(@PathVariable String idEvento) {
+        eventoAccionService.deleteEventoAccionById(idEvento);
+        return ResponseEntity.noContent().build();
+    }
 }

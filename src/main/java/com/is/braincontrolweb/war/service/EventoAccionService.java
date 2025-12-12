@@ -30,4 +30,10 @@ public class EventoAccionService {
     public Optional<EventoAccion> getEventoAccionById(String idEvento) {
         return eventoAccionRepository.findById(idEvento);
     }
+
+    @Transactional
+    public void deleteEventoAccionById(String id) {
+        eventoAccionRepository.deleteById(id);
+    }
+
 }
