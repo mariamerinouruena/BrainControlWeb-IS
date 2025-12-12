@@ -62,7 +62,6 @@ public class EventoAccionWebController {
         eventoAccionService.deleteEventoAccionById(id);
         redirectAttributes.addFlashAttribute("mensaje", "Evento de Acción eliminado.");
         return "redirect:/eventos-accion";
-        // aqui hay que añadir en el controller qu ehico marioa el metodo delete 
     }
 
 }
