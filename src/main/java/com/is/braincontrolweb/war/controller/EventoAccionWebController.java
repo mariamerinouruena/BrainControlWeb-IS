@@ -41,8 +41,8 @@ public class EventoAccionWebController {
         Optional<EventoAccion> eventoAccion = eventoAccionService.getEventoAccionById(id);
        
         if (eventoAccion.isPresent()) {
-        model.addAttribute("eventoAccion", eventoAccion.get());    
-        return "formulario-eventos";
+            model.addAttribute("eventoAccion", eventoAccion.get());    
+            return "formulario-eventos";
         } else {
             return "redirect:/eventos-accion";
         }
@@ -63,5 +63,19 @@ public class EventoAccionWebController {
         redirectAttributes.addFlashAttribute("mensaje", "Evento de Acción eliminado.");
         return "redirect:/eventos-accion";
     }
+
+    @GetMapping("/evento/{id}")
+    public String verEvento(@PathVariable String id, Model model) {
+        Optional<EventoAccion> evento = eventoAccionService.getEventoAccionById(id);
+
+        if (evento.isPresent()) {
+            model.addAttribute("evento", evento.get());
+            return "detalle-evento";
+        } else {
+            return "redirect:/eventos-accion";
+        }
+    }
+
+
 
 }

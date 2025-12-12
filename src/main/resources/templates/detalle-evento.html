@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalle del Evento</title>
+</head>
+<body>
+<h1>Detalle del Evento</h1>
+
+<p><strong>ID:</strong> <span th:text="${evento.idEvento}"></span></p>
+<p><strong>Acción:</strong> <span th:text="${evento.action}"></span></p>
+<p><strong>Fecha:</strong> <span th:text="${evento.date}"></span></p>
+
+<a href="/lista-eventos">Volver al listado</a>
+
+</body>
+</html>
