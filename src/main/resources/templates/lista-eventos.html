@@ -1,36 +1,19 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Lista de Eventos</title>
-</head>
-<body>
+<tr th:each="evento : ${listaEventos}">
+    <td th:text="${evento.idEvento}"></td>
+    <td th:text="${evento.tipo}"></td>
+    <td th:text="${evento.date}"></td>
+    <td th:text="${evento.posicion}"></td>
+    <td th:text="${evento.resultado}"></td>
+    <td th:text="${evento.tiempoReaccion}"></td>
+    <td>
+        <a th:href="@{/eventos-accion/editar/{id}(id=${evento.idEvento})}">Editar</a>
+        <a th:href="@{/eventos-accion/evento/{id}(id=${evento.idEvento})}">Ver</a>
 
-<h1>Eventos de Acción</h1>
+        <form th:action="@{/eventos-accion/borrar/{id}(id=${evento.idEvento})}"
+              method="post" style="display:inline">
+            <button type="submit">Borrar</button>
+        </form>
+    </td>
+</tr>
 
-<a th:href="@{/eventos-accion/crear}">Crear nuevo evento</a>
 
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Acción</th>
-        <th>Fecha</th>
-        <th>Acciones</th>
-    </tr>
-
-    <tr th:each="evento : ${listaEventos}">
-        <td th:text="${evento.idEvento}"></td>
-        <td th:text="${evento.action}"></td>
-        <td th:text="${evento.date}"></td>
-        <td>
-            <a th:href="@{/eventos-accion/editar/{id}(id=${evento.idEvento})}">Editar</a>
-            <a th:href="@{/eventos-accion/evento/{id}(id=${evento.idEvento})}">Ver</a>
-
-            <form th:action="@{/eventos-accion/borrar/{id}(id=${evento.idEvento})}" method="post" style="display:inline">
-                <button type="submit">Borrar</button>
-            </form>
-        </td>
-    </tr>
-</table>
-
-</body>
-</html>
