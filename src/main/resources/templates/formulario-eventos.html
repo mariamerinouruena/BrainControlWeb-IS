@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario Evento</title>
+</head>
+<body>
+
+<h1>Evento de Acción</h1>
+
+<form th:action="@{/eventos-accion/guardar}" th:object="${eventoAccion}" method="post">
+
+    <label>ID:</label>
+    <input type="text" th:field="*{idEvento}" /><br/>
+
+    <label>Acción:</label>
+    <input type="text" th:field="*{action}" /><br/>
+
+    <label>Fecha:</label>
+    <input type="datetime-local" th:field="*{date}" /><br/>
+
+    <button type="submit">Guardar</button>
+</form>
+
+<a th:href="@{/eventos-accion}">Volver</a>
+
+</body>
+</html>

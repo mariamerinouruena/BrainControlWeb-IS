@@ -10,7 +10,7 @@
 <p><strong>Acción:</strong> <span th:text="${evento.action}"></span></p>
 <p><strong>Fecha:</strong> <span th:text="${evento.date}"></span></p>
 
-<a href="/lista-eventos">Volver al listado</a>
+<a th:href="@{/eventos-accion}">Volver al listado</a>
 
 </body>
 </html>
