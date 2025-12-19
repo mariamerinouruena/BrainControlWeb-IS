@@ -1,0 +1,19 @@
+<tr th:each="evento : ${listaEventos}">
+    <td th:text="${evento.idEvento}"></td>
+    <td th:text="${evento.tipo}"></td>
+    <td th:text="${evento.date}"></td>
+    <td th:text="${evento.posicion}"></td>
+    <td th:text="${evento.resultado}"></td>
+    <td th:text="${evento.tiempoReaccion}"></td>
+    <td>
+        <a th:href="@{/eventos-accion/editar/{id}(id=${evento.idEvento})}">Editar</a>
+        <a th:href="@{/eventos-accion/evento/{id}(id=${evento.idEvento})}">Ver</a>
+
+        <form th:action="@{/eventos-accion/borrar/{id}(id=${evento.idEvento})}"
+              method="post" style="display:inline">
+            <button type="submit">Borrar</button>
+        </form>
+    </td>
+</tr>
+
+

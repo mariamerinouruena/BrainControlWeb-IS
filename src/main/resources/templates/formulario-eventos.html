@@ -1,0 +1,25 @@
+<form th:action="@{/eventos-accion/guardar}"
+      th:object="${eventoAccion}" method="post">
+
+    <label>ID:</label>
+    <input type="text" th:field="*{idEvento}" /><br/>
+
+    <label>Tipo:</label>
+    <input type="text" th:field="*{tipo}" /><br/>
+
+    <label>Fecha:</label>
+    <input type="datetime-local" th:field="*{date}" /><br/>
+
+    <label>Posición:</label>
+    <input type="text" th:field="*{posicion}" /><br/>
+
+    <label>Resultado:</label>
+    <input type="text" th:field="*{resultado}" /><br/>
+
+    <label>Tiempo de reacción:</label>
+    <input type="number" th:field="*{tiempoReaccion}" /><br/>
+
+    <button type="submit">Guardar</button>
+</form>
+
+
